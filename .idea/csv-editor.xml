@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CsvFileAttributes">
+    <option name="attributeMap">
+      <map>
+        <entry key="C:\Users\Admin\Downloads\pyside-setup-everywhere-src-6.5.1\pyside-setup-everywhere-src-6.5.1\examples\external\pandas\iris.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Users\Admin\Downloads\pyside-setup-everywhere-src-6.5.1\pyside-setup-everywhere-src-6.5.1\sources\pyside6\doc\tutorials\datavisualize\all_hour.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

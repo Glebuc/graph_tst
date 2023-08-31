@@ -1,0 +1,40 @@
+<RCC>
+  <qresource prefix="Icons">
+    <file>about.svg</file>
+    <file>add-document.svg</file>
+    <file>arrow.svg</file>
+    <file>arrow_left.svg</file>
+    <file>arrow_rigth.svg</file>
+    <file>bar.svg</file>
+    <file>book.svg</file>
+    <file>burger.svg</file>
+    <file>check.svg</file>
+    <file>check_mark.svg</file>
+    <file>disk_save.svg</file>
+    <file>document.svg</file>
+    <file>error.svg</file>
+    <file>filter.svg</file>
+    <file>folder-add.svg</file>
+    <file>forbidden.svg</file>
+    <file>help.svg</file>
+    <file>home.svg</file>
+    <file>main_icon.svg</file>
+    <file>plus.svg</file>
+    <file>search.svg</file>
+    <file>settings.svg</file>
+    <file>success_file.svg</file>
+    <file>warning_message.svg</file>
+    <file>x.svg</file>
+    <file>check.svg</file>
+    <file>home.svg</file>
+    <file>burger.svg</file>
+    <file>document.svg</file>
+    <file>about.svg</file>
+    <file>bar.svg</file>
+    <file>error.svg</file>
+    <file>help.svg</file>
+    <file>main_icon.svg</file>
+    <file>plus.svg</file>
+    <file>settings.svg</file>
+  </qresource>
+</RCC>
