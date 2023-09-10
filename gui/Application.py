@@ -1,6 +1,6 @@
 from PySide6.QtWidgets import QApplication
 from PySide6.QtSql import QSqlDatabase
-from database import config_db
+
 
 class Application(QApplication):
     def __init__(self, argv):
