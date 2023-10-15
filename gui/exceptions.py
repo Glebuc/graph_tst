@@ -1,0 +1,1 @@
+class MyQtSqlModeError(Exception): pass

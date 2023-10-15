@@ -2,21 +2,23 @@ from PySide6.QtGui import QIcon
 
 from ui_mainwindow import Ui_MainWindow
 from PySide6.QtCore import QPropertyAnimation, QEasingCurve, QSize
-from PySide6.QtWidgets import QPushButton
+from PySide6.QtWidgets import QPushButton, QMessageBox
+from PySide6.QtCore import Slot
+import psycopg2
+from config_db import db_params
 
+
+from Search_result_dialog import CustomDialog
 class UIFunctions(Ui_MainWindow):
 
 
-    def reset_style(self):
-        child_button_menu = self.ui.widget_menu.findChildren(QPushButton)
-        for btn in child_button_menu:
-            btn.setStyleSheet("")
 
     # def set_active_btn(self):
     #     child_widgets = self.ui.frame_2.findChildren(QPushButton)
     #     for child_widget in child_widgets:
     #         child_widget.setStyleSheet()
 
+    @Slot()
     def toggle_text(self):
         checked = self.ui.burger_btn.isChecked()  # Проверяем состояние кнопки меню
         if checked:
@@ -46,9 +48,21 @@ class UIFunctions(Ui_MainWindow):
             self.ui.burger_btn.setIcon(icon)
             self.ui.burger_btn.setIconSize(QSize(36, 36))
 
+    @Slot()
+    def open_dialog_search(self):
+        dialog = CustomDialog()
+        dialog.exec_()
 
-
-
+    def check_connection_database(self):
+        try:
+            conn = psycopg2.connect(**db_params)
+            conn.close()
+            # В случае успешного соединения, показываем сообщение
+            QMessageBox.information(None, "Success", "Соединение с PostgreSQL успешно установлено!")
+        except psycopg2.Error as e:
+            # В случае ошибки, показываем сообщение с ошибкой
+            QMessageBox.critical(None, "Error", f"Ошибка соединения с PostgreSQL:\n{str(e)}")
+    @Slot()
     def toggleMenu(self, maxWidth, enable):
         if enable:
 
