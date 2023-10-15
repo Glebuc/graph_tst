@@ -8,7 +8,7 @@ import psycopg2
 from config_db import db_params
 
 
-from Search_result_dialog import CustomDialog
+from Result.Search_result_dialog import CustomDialog
 class UIFunctions(Ui_MainWindow):
 
 
@@ -20,7 +20,8 @@ class UIFunctions(Ui_MainWindow):
 
     @Slot()
     def toggle_text(self):
-        checked = self.ui.burger_btn.isChecked()  # Проверяем состояние кнопки меню
+        checked = self.burger_btn.isChecked()
+        print(checked)
         if checked:
             self.ui.report_btn.setText("Отчеты")
             self.ui.report_btn.setToolTip("")

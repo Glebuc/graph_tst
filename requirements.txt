@@ -1,4 +1,5 @@
 asgiref==3.7.2
+<<<<<<< HEAD
 click==8.1.3
 colorama==0.4.6
 darkdetect==0.7.1
@@ -8,10 +9,17 @@ Jinja2==3.1.2
 MarkupSafe==2.1.3
 psycopg2==2.9.6
 pyqtdarktheme==2.1.0
+=======
+Django==4.2.5
+>>>>>>> 44a8b5de9471abfcbb75ecf4669588d1052dbeda
 PySide6==6.5.2
 PySide6-Addons==6.5.2
 PySide6-Essentials==6.5.2
 shiboken6==6.5.2
 sqlparse==0.4.4
+<<<<<<< HEAD
 tzdata==2023.3
 Werkzeug==2.3.6
+=======
+typing_extensions==4.7.1
+>>>>>>> 44a8b5de9471abfcbb75ecf4669588d1052dbeda

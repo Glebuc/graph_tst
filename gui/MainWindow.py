@@ -13,9 +13,12 @@ import database.Model_result
 
 
 import sys
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> 44a8b5de9471abfcbb75ecf4669588d1052dbeda
 
 
 class Ui(QMainWindow):
