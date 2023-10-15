@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6daa81af-251c-432b-9778-756e12e56bd4" name="Changes" comment="" />
+    <list default="true" id="6daa81af-251c-432b-9778-756e12e56bd4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/diplom.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/diplom.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/Application.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/Application.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/MainWindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/MainWindow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/config_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/database/config_db.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/database/Model_result.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/database/Model_result.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/main.ui" beforeDir="false" afterPath="$PROJECT_DIR$/gui/main.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/ui_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/ui_functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/ui_mainwindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/ui_mainwindow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,6 +45,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "last_opened_file_path": "D:/diplom/gui/static",
     "settings.editor.selected.configurable": "configurable.group.appearance"
   }
@@ -42,9 +58,9 @@
       <recent name="D:\diplom\src\gui" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\diplom\gui\database" />
       <recent name="D:\diplom\gui\Result" />
       <recent name="D:\diplom\gui" />
-      <recent name="D:\diplom\gui\database" />
       <recent name="D:\diplom\web\backend" />
       <recent name="D:\diplom\web" />
     </key>

@@ -1,7 +1,8 @@
 from PySide6.QtWidgets import QApplication
 from PySide6.QtSql import QSqlDatabase
+from PySide6.QtGui import QFont
 
-import config_db as dbc
+import database.config_db as dbc
 import logging
 
 
@@ -10,6 +11,9 @@ LOG = logging.getLogger(__name__)
 class Application(QApplication):
     def __init__(self, argv):
         super().__init__(argv)
+        font = QFont()
+        font.setPointSize(10)
+        QApplication.setFont(font)
 
         db = QSqlDatabase.addDatabase('QPSQL')
         db.setHostName(dbc.db_params['host'])

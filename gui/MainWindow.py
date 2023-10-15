@@ -32,11 +32,8 @@ class Ui(QMainWindow):
         ## TOGGLE MENU
         self.ui.burger_btn.clicked.connect(lambda: UIFunctions.toggleMenu(self, 250, True))
 
-
         self.ui.burger_btn.clicked.connect(UIFunctions.toggle_text)
 
-
-        # self.ui.home_btn.clicked.connect(UIFunctions.set_active_btn(self))
 
         # REPORT PAGE
         self.ui.report_btn.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_report))
@@ -52,13 +49,14 @@ class Ui(QMainWindow):
 
         self.ui.btn_open_extension_search.clicked.connect(UIFunctions.open_dialog_search)
 
-        self.ui.pushButton_3.clicked.connect(UIFunctions.check_connection_database)
+        self.ui.btn_check_conn_database.clicked.connect(UIFunctions.check_connection_database)
 
         database.Model_result.init_db()
 
         model = QSqlRelationalTableModel(self.ui.tableView)
         model.setEditStrategy(QSqlTableModel.OnManualSubmit)
         model.setTable("tests")
+
 
         # Remember the indexes of the columns:
         # author_idx = model.fieldIndex("tests")

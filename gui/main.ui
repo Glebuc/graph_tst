@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>728</width>
-    <height>600</height>
+    <width>688</width>
+    <height>601</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -59,9 +59,7 @@ background-color: #ffffff;
 background-color: #ffffff;
 border-left: 3px solid #eee;
 }
-QLabel{
-font-size: 20px;
-}
+
 #left_menu QPushButton:hover{
 background-color:  rgba(255, 255, 255, 80);
 }
@@ -85,12 +83,19 @@ Line {
 	background-color: rgb(168, 168, 168);
 }
  QToolTip {
-        background-color: #FFFFFF; /* Желтый цвет фона */
-        color: #000000; /* Черный цвет текста */
-        border: 1px solid #000000; /* Черная граница */
+        background-color: #FFFFFF;
+        color: #000000;
+        border: 1px solid #000000;
  }
 QDateEdit {
- border: 1px solid #000000; 
+ 	border: 1px solid #000000; 
+	padding: 0.5em;
+}
+#page_setting  QPushButton, #page_report  QPushButton, #page_chart  QPushButton, #page_result QPushButton {
+background-color: rgb(197, 197, 197);
+}
+#page_setting  QPushButton:hover, #page_report  QPushButton:hover, #page_chart  QPushButton:hover, #page_result QPushButton:hover {
+background-color: rgb(220, 220, 220);
 }</string>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -242,7 +247,7 @@ QDateEdit {
                    <bool>true</bool>
                   </property>
                   <property name="checked">
-                   <bool>true</bool>
+                   <bool>false</bool>
                   </property>
                  </widget>
                 </item>
@@ -695,6 +700,12 @@ QDateEdit {
                    <layout class="QHBoxLayout" name="horizontalLayout_5">
                     <item>
                      <widget class="QComboBox" name="change_test">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
                       <property name="cursor">
                        <cursorShape>PointingHandCursor</cursorShape>
                       </property>
@@ -745,14 +756,14 @@ QDateEdit {
                       </item>
                      </widget>
                     </item>
-                    <item alignment="Qt::AlignRight|Qt::AlignTop">
+                    <item alignment="Qt::AlignRight|Qt::AlignVCenter">
                      <widget class="QLabel" name="label_15">
                       <property name="text">
                        <string>от</string>
                       </property>
                      </widget>
                     </item>
-                    <item>
+                    <item alignment="Qt::AlignVCenter">
                      <widget class="QDateEdit" name="dateEdit_from">
                       <property name="cursor">
                        <cursorShape>PointingHandCursor</cursorShape>
@@ -786,14 +797,14 @@ color: rgb(0, 0, 0);</string>
                       </property>
                      </widget>
                     </item>
-                    <item alignment="Qt::AlignRight|Qt::AlignTop">
+                    <item alignment="Qt::AlignRight|Qt::AlignVCenter">
                      <widget class="QLabel" name="label_16">
                       <property name="text">
                        <string>до</string>
                       </property>
                      </widget>
                     </item>
-                    <item>
+                    <item alignment="Qt::AlignVCenter">
                      <widget class="QDateEdit" name="dateEdit_until">
                       <property name="cursor">
                        <cursorShape>PointingHandCursor</cursorShape>
@@ -819,6 +830,12 @@ color: rgb(0, 0, 0);</string>
                     </item>
                     <item>
                      <widget class="QPushButton" name="btn_complete_filter_result">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
                       <property name="cursor">
                        <cursorShape>PointingHandCursor</cursorShape>
                       </property>
@@ -829,6 +846,12 @@ color: rgb(0, 0, 0);</string>
                     </item>
                     <item>
                      <widget class="QPushButton" name="btn_open_extension_search">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
                       <property name="cursor">
                        <cursorShape>PointingHandCursor</cursorShape>
                       </property>
@@ -966,10 +989,105 @@ color: rgb(0, 0, 0);</string>
                </widget>
               </item>
               <item>
-               <widget class="QLabel" name="label_14">
-                <property name="text">
-                 <string>Основные настройки приложения</string>
+               <spacer name="verticalSpacer_2">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
                 </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Fixed</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>10</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QFrame" name="frame_scale">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_11">
+                 <item>
+                  <widget class="QLabel" name="label_8">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="text">
+                    <string>Масштаб</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="comboBox_scale">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="cursor">
+                    <cursorShape>PointingHandCursor</cursorShape>
+                   </property>
+                   <property name="autoFillBackground">
+                    <bool>false</bool>
+                   </property>
+                   <property name="editable">
+                    <bool>false</bool>
+                   </property>
+                   <property name="currentText">
+                    <string>100%</string>
+                   </property>
+                   <property name="frame">
+                    <bool>true</bool>
+                   </property>
+                   <item>
+                    <property name="text">
+                     <string>50%</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>80%</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>100%</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>120%</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>150%</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>200%</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                </layout>
                </widget>
               </item>
               <item>
@@ -986,7 +1104,7 @@ color: rgb(0, 0, 0);</string>
                 <property name="frameShadow">
                  <enum>QFrame::Raised</enum>
                 </property>
-                <layout class="QGridLayout" name="gridLayout" rowstretch="10,10,10,10,0,0,0,0" columnstretch="0">
+                <layout class="QGridLayout" name="gridLayout" rowstretch="10,0,0,0,0,0,0,0,0,0" columnstretch="0">
                  <property name="leftMargin">
                   <number>0</number>
                  </property>
@@ -999,32 +1117,10 @@ color: rgb(0, 0, 0);</string>
                  <property name="bottomMargin">
                   <number>0</number>
                  </property>
-                 <item row="2" column="0" alignment="Qt::AlignBottom">
-                  <widget class="QLabel" name="label_2">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
-                   <property name="minimumSize">
-                    <size>
-                     <width>640</width>
-                     <height>24</height>
-                    </size>
-                   </property>
-                   <property name="text">
-                    <string>Дополнительные настройки приложения</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="1" column="0">
-                  <spacer name="verticalSpacer_2">
+                 <item row="8" column="0">
+                  <spacer name="verticalSpacer_5">
                    <property name="orientation">
                     <enum>Qt::Vertical</enum>
-                   </property>
-                   <property name="sizeType">
-                    <enum>QSizePolicy::Fixed</enum>
                    </property>
                    <property name="sizeHint" stdset="0">
                     <size>
@@ -1034,14 +1130,113 @@ color: rgb(0, 0, 0);</string>
                    </property>
                   </spacer>
                  </item>
-                 <item row="5" column="0" alignment="Qt::AlignBottom">
-                  <widget class="QLabel" name="label_17">
-                   <property name="text">
-                    <string>Настройки соединения с БД</string>
+                 <item row="9" column="0">
+                  <widget class="QFrame" name="frame_6">
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
                    </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout">
+                    <item alignment="Qt::AlignRight|Qt::AlignBottom">
+                     <widget class="QFrame" name="frame_10">
+                      <property name="frameShape">
+                       <enum>QFrame::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Raised</enum>
+                      </property>
+                      <layout class="QHBoxLayout" name="horizontalLayout_4">
+                       <item>
+                        <widget class="QPushButton" name="btn_settings_about_app">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="cursor">
+                          <cursorShape>PointingHandCursor</cursorShape>
+                         </property>
+                         <property name="text">
+                          <string>О приложение</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="btn_setting_save">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="cursor">
+                          <cursorShape>PointingHandCursor</cursorShape>
+                         </property>
+                         <property name="text">
+                          <string>Применить настройки</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                   </layout>
                   </widget>
                  </item>
-                 <item row="6" column="0">
+                 <item row="2" column="0">
+                  <widget class="QFrame" name="frame_18">
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_23">
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <item alignment="Qt::AlignBottom">
+                     <widget class="QLabel" name="label_13">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="text">
+                       <string>Руководство пользователя TsT Graph</string>
+                      </property>
+                      <property name="wordWrap">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="btn_setting_user_guide">
+                      <property name="cursor">
+                       <cursorShape>PointingHandCursor</cursorShape>
+                      </property>
+                      <property name="text">
+                       <string>Показать</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item row="7" column="0">
                   <widget class="QFrame" name="frame_5">
                    <property name="frameShape">
                     <enum>QFrame::StyledPanel</enum>
@@ -1050,15 +1245,30 @@ color: rgb(0, 0, 0);</string>
                     <enum>QFrame::Raised</enum>
                    </property>
                    <layout class="QHBoxLayout" name="horizontalLayout_3">
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
                     <item>
-                     <widget class="QFrame" name="frame_9">
+                     <widget class="QFrame" name="frame_8">
                       <property name="frameShape">
                        <enum>QFrame::StyledPanel</enum>
                       </property>
                       <property name="frameShadow">
                        <enum>QFrame::Raised</enum>
                       </property>
-                      <layout class="QVBoxLayout" name="verticalLayout_15">
+                      <layout class="QVBoxLayout" name="verticalLayout_9">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
                        <property name="topMargin">
                         <number>0</number>
                        </property>
@@ -1092,48 +1302,20 @@ color: rgb(0, 0, 0);</string>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QFrame" name="frame_8">
-                      <property name="frameShape">
-                       <enum>QFrame::StyledPanel</enum>
+                     <spacer name="horizontalSpacer_5">
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
                       </property>
-                      <property name="frameShadow">
-                       <enum>QFrame::Raised</enum>
+                      <property name="sizeType">
+                       <enum>QSizePolicy::Fixed</enum>
                       </property>
-                      <layout class="QVBoxLayout" name="verticalLayout_9">
-                       <property name="leftMargin">
-                        <number>0</number>
-                       </property>
-                       <property name="topMargin">
-                        <number>0</number>
-                       </property>
-                       <property name="rightMargin">
-                        <number>0</number>
-                       </property>
-                       <property name="bottomMargin">
-                        <number>0</number>
-                       </property>
-                       <item>
-                        <widget class="QLabel" name="label_12">
-                         <property name="text">
-                          <string>Горячие клавиши в TsT Graph</string>
-                         </property>
-                         <property name="wordWrap">
-                          <bool>true</bool>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QPushButton" name="btn_open_hot_keys_2">
-                         <property name="cursor">
-                          <cursorShape>PointingHandCursor</cursorShape>
-                         </property>
-                         <property name="text">
-                          <string>Показать</string>
-                         </property>
-                        </widget>
-                       </item>
-                      </layout>
-                     </widget>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>40</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </spacer>
                     </item>
                     <item>
                      <widget class="QFrame" name="frame_7">
@@ -1183,18 +1365,12 @@ color: rgb(0, 0, 0);</string>
                   </widget>
                  </item>
                  <item row="0" column="0">
-                  <widget class="QFrame" name="frame_4">
+                  <widget class="QFrame" name="frame_language">
                    <property name="sizePolicy">
-                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                      <horstretch>0</horstretch>
                      <verstretch>0</verstretch>
                     </sizepolicy>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>160000</width>
-                     <height>160000</height>
-                    </size>
                    </property>
                    <property name="frameShape">
                     <enum>QFrame::StyledPanel</enum>
@@ -1202,101 +1378,68 @@ color: rgb(0, 0, 0);</string>
                    <property name="frameShadow">
                     <enum>QFrame::Raised</enum>
                    </property>
-                   <layout class="QHBoxLayout" name="horizontalLayout_7">
-                    <property name="spacing">
-                     <number>0</number>
-                    </property>
-                    <property name="leftMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="topMargin">
-                     <number>20</number>
-                    </property>
-                    <property name="rightMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="bottomMargin">
-                     <number>0</number>
-                    </property>
-                    <item>
-                     <widget class="QFrame" name="frame_scale">
-                      <property name="frameShape">
-                       <enum>QFrame::StyledPanel</enum>
+                   <layout class="QHBoxLayout" name="horizontalLayout_10">
+                    <item alignment="Qt::AlignLeft">
+                     <widget class="QLabel" name="label_10">
+                      <property name="text">
+                       <string>Язык</string>
                       </property>
-                      <property name="frameShadow">
-                       <enum>QFrame::Raised</enum>
-                      </property>
-                      <layout class="QVBoxLayout" name="verticalLayout_17">
-                       <item alignment="Qt::AlignTop">
-                        <widget class="QLabel" name="label_8">
-                         <property name="sizePolicy">
-                          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                           <horstretch>0</horstretch>
-                           <verstretch>0</verstretch>
-                          </sizepolicy>
-                         </property>
-                         <property name="text">
-                          <string>Масштаб</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item alignment="Qt::AlignTop">
-                        <widget class="QComboBox" name="comboBox_scale">
-                         <property name="sizePolicy">
-                          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                           <horstretch>0</horstretch>
-                           <verstretch>0</verstretch>
-                          </sizepolicy>
-                         </property>
-                         <property name="cursor">
-                          <cursorShape>PointingHandCursor</cursorShape>
-                         </property>
-                         <property name="autoFillBackground">
-                          <bool>false</bool>
-                         </property>
-                         <property name="editable">
-                          <bool>false</bool>
-                         </property>
-                         <property name="currentText">
-                          <string>50%</string>
-                         </property>
-                         <property name="frame">
-                          <bool>true</bool>
-                         </property>
-                         <item>
-                          <property name="text">
-                           <string>50%</string>
-                          </property>
-                         </item>
-                         <item>
-                          <property name="text">
-                           <string>80%</string>
-                          </property>
-                         </item>
-                         <item>
-                          <property name="text">
-                           <string>100%</string>
-                          </property>
-                         </item>
-                         <item>
-                          <property name="text">
-                           <string>120%</string>
-                          </property>
-                         </item>
-                         <item>
-                          <property name="text">
-                           <string>150%</string>
-                          </property>
-                         </item>
-                         <item>
-                          <property name="text">
-                           <string>200%</string>
-                          </property>
-                         </item>
-                        </widget>
-                       </item>
-                      </layout>
                      </widget>
+                    </item>
+                    <item>
+                     <spacer name="horizontalSpacer">
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
+                      </property>
+                      <property name="sizeType">
+                       <enum>QSizePolicy::Fixed</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>40</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                    <item>
+                     <widget class="QComboBox" name="comboBox_language">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="cursor">
+                       <cursorShape>PointingHandCursor</cursorShape>
+                      </property>
+                      <item>
+                       <property name="text">
+                        <string>Русский</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>English</string>
+                       </property>
+                      </item>
+                     </widget>
+                    </item>
+                    <item>
+                     <spacer name="horizontalSpacer_4">
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
+                      </property>
+                      <property name="sizeType">
+                       <enum>QSizePolicy::Fixed</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>40</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </spacer>
                     </item>
                     <item>
                      <widget class="QFrame" name="frame_theme">
@@ -1306,18 +1449,34 @@ color: rgb(0, 0, 0);</string>
                       <property name="frameShadow">
                        <enum>QFrame::Raised</enum>
                       </property>
-                      <layout class="QVBoxLayout" name="verticalLayout_18">
-                       <item alignment="Qt::AlignTop">
+                      <layout class="QHBoxLayout" name="horizontalLayout_12">
+                       <item>
                         <widget class="QLabel" name="label_9">
                          <property name="text">
                           <string>Тема</string>
                          </property>
                         </widget>
                        </item>
-                       <item alignment="Qt::AlignTop">
+                       <item>
+                        <spacer name="horizontalSpacer_2">
+                         <property name="orientation">
+                          <enum>Qt::Horizontal</enum>
+                         </property>
+                         <property name="sizeType">
+                          <enum>QSizePolicy::Fixed</enum>
+                         </property>
+                         <property name="sizeHint" stdset="0">
+                          <size>
+                           <width>40</width>
+                           <height>20</height>
+                          </size>
+                         </property>
+                        </spacer>
+                       </item>
+                       <item>
                         <widget class="QComboBox" name="comboBox_theme">
                          <property name="sizePolicy">
-                          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                            <horstretch>0</horstretch>
                            <verstretch>0</verstretch>
                           </sizepolicy>
@@ -1340,60 +1499,54 @@ color: rgb(0, 0, 0);</string>
                       </layout>
                      </widget>
                     </item>
-                    <item>
-                     <widget class="QFrame" name="frame_language">
-                      <property name="frameShape">
-                       <enum>QFrame::StyledPanel</enum>
-                      </property>
-                      <property name="frameShadow">
-                       <enum>QFrame::Raised</enum>
-                      </property>
-                      <layout class="QVBoxLayout" name="verticalLayout_19">
-                       <item alignment="Qt::AlignTop">
-                        <widget class="QLabel" name="label_10">
-                         <property name="text">
-                          <string>Язык</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item alignment="Qt::AlignTop">
-                        <widget class="QComboBox" name="comboBox_language">
-                         <property name="cursor">
-                          <cursorShape>PointingHandCursor</cursorShape>
-                         </property>
-                         <item>
-                          <property name="text">
-                           <string>Русский</string>
-                          </property>
-                         </item>
-                         <item>
-                          <property name="text">
-                           <string>English</string>
-                          </property>
-                         </item>
-                        </widget>
-                       </item>
-                      </layout>
-                     </widget>
-                    </item>
                    </layout>
                   </widget>
                  </item>
-                 <item row="3" column="0">
-                  <widget class="QFrame" name="frame_15">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
+                 <item row="1" column="0">
+                  <widget class="QFrame" name="frame_17">
                    <property name="frameShape">
                     <enum>QFrame::StyledPanel</enum>
                    </property>
                    <property name="frameShadow">
                     <enum>QFrame::Raised</enum>
                    </property>
-                   <layout class="QHBoxLayout" name="horizontalLayout_6">
+                   <layout class="QHBoxLayout" name="horizontalLayout_14">
+                    <item alignment="Qt::AlignLeft">
+                     <widget class="QLabel" name="label">
+                      <property name="text">
+                       <string>Шрифт</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <spacer name="horizontalSpacer_3">
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
+                      </property>
+                      <property name="sizeType">
+                       <enum>QSizePolicy::Fixed</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>40</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                    <item>
+                     <widget class="QFontComboBox" name="fontComboBox">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="cursor">
+                       <cursorShape>PointingHandCursor</cursorShape>
+                      </property>
+                     </widget>
+                    </item>
                     <item>
                      <widget class="QFrame" name="frame_16">
                       <property name="frameShape">
@@ -1402,8 +1555,8 @@ color: rgb(0, 0, 0);</string>
                       <property name="frameShadow">
                        <enum>QFrame::Raised</enum>
                       </property>
-                      <layout class="QVBoxLayout" name="verticalLayout_22">
-                       <item alignment="Qt::AlignBottom">
+                      <layout class="QHBoxLayout" name="horizontalLayout_13">
+                       <item>
                         <widget class="QLabel" name="label_6">
                          <property name="text">
                           <string>Размер шрифта</string>
@@ -1418,107 +1571,8 @@ color: rgb(0, 0, 0);</string>
                          <property name="cursor">
                           <cursorShape>PointingHandCursor</cursorShape>
                          </property>
-                        </widget>
-                       </item>
-                      </layout>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QFrame" name="frame_17">
-                      <property name="frameShape">
-                       <enum>QFrame::StyledPanel</enum>
-                      </property>
-                      <property name="frameShadow">
-                       <enum>QFrame::Raised</enum>
-                      </property>
-                      <layout class="QVBoxLayout" name="verticalLayout_21">
-                       <item alignment="Qt::AlignBottom">
-                        <widget class="QLabel" name="label">
-                         <property name="text">
-                          <string>Шрифт</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QFontComboBox" name="fontComboBox">
-                         <property name="cursor">
-                          <cursorShape>PointingHandCursor</cursorShape>
-                         </property>
-                        </widget>
-                       </item>
-                      </layout>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QFrame" name="frame_18">
-                      <property name="frameShape">
-                       <enum>QFrame::StyledPanel</enum>
-                      </property>
-                      <property name="frameShadow">
-                       <enum>QFrame::Raised</enum>
-                      </property>
-                      <layout class="QVBoxLayout" name="verticalLayout_23">
-                       <item alignment="Qt::AlignBottom">
-                        <widget class="QLabel" name="label_13">
-                         <property name="text">
-                          <string>Руководство пользователя TsT Graph</string>
-                         </property>
-                         <property name="wordWrap">
-                          <bool>true</bool>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QPushButton" name="btn_setting_user_guide">
-                         <property name="cursor">
-                          <cursorShape>PointingHandCursor</cursorShape>
-                         </property>
-                         <property name="text">
-                          <string>Показать</string>
-                         </property>
-                        </widget>
-                       </item>
-                      </layout>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                 <item row="7" column="0">
-                  <widget class="QFrame" name="frame_6">
-                   <property name="frameShape">
-                    <enum>QFrame::StyledPanel</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Raised</enum>
-                   </property>
-                   <layout class="QHBoxLayout" name="horizontalLayout">
-                    <item alignment="Qt::AlignRight|Qt::AlignBottom">
-                     <widget class="QFrame" name="frame_10">
-                      <property name="frameShape">
-                       <enum>QFrame::StyledPanel</enum>
-                      </property>
-                      <property name="frameShadow">
-                       <enum>QFrame::Raised</enum>
-                      </property>
-                      <layout class="QHBoxLayout" name="horizontalLayout_4">
-                       <item>
-                        <widget class="QPushButton" name="btn_settings_about_app">
-                         <property name="cursor">
-                          <cursorShape>PointingHandCursor</cursorShape>
-                         </property>
-                         <property name="text">
-                          <string>О приложение</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QPushButton" name="btn_setting_save">
-                         <property name="cursor">
-                          <cursorShape>PointingHandCursor</cursorShape>
-                         </property>
-                         <property name="text">
-                          <string>Применить настройки</string>
+                         <property name="minimum">
+                          <number>5</number>
                          </property>
                         </widget>
                        </item>
@@ -1529,20 +1583,45 @@ color: rgb(0, 0, 0);</string>
                   </widget>
                  </item>
                  <item row="4" column="0">
-                  <spacer name="verticalSpacer_3">
-                   <property name="orientation">
-                    <enum>Qt::Vertical</enum>
+                  <widget class="QPushButton" name="btn_open_hot_keys_2">
+                   <property name="cursor">
+                    <cursorShape>PointingHandCursor</cursorShape>
                    </property>
-                   <property name="sizeType">
-                    <enum>QSizePolicy::Fixed</enum>
+                   <property name="text">
+                    <string>Показать</string>
                    </property>
-                   <property name="sizeHint" stdset="0">
-                    <size>
-                     <width>20</width>
-                     <height>40</height>
-                    </size>
+                  </widget>
+                 </item>
+                 <item row="3" column="0">
+                  <widget class="QLabel" name="label_12">
+                   <property name="text">
+                    <string>Горячие клавиши в TsT Graph</string>
                    </property>
-                  </spacer>
+                   <property name="wordWrap">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="6" column="0">
+                  <widget class="QFrame" name="frame_9">
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_15">
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                   </layout>
+                  </widget>
                  </item>
                 </layout>
                </widget>

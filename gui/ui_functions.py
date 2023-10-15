@@ -5,7 +5,9 @@ from PySide6.QtCore import QPropertyAnimation, QEasingCurve, QSize
 from PySide6.QtWidgets import QPushButton, QMessageBox
 from PySide6.QtCore import Slot
 import psycopg2
-from config_db import db_params
+from database.config_db import db_params
+
+from database.Model_result import  init_db
 
 
 from Result.Search_result_dialog import CustomDialog
@@ -20,7 +22,7 @@ class UIFunctions(Ui_MainWindow):
 
     @Slot()
     def toggle_text(self):
-        checked = self.burger_btn.isChecked()
+        checked = self.ui.burger_btn.isChecked()
         print(checked)
         if checked:
             self.ui.report_btn.setText("Отчеты")
@@ -54,10 +56,10 @@ class UIFunctions(Ui_MainWindow):
         dialog = CustomDialog()
         dialog.exec_()
 
+    @Slot()
     def check_connection_database(self):
         try:
-            conn = psycopg2.connect(**db_params)
-            conn.close()
+            init_db()
             # В случае успешного соединения, показываем сообщение
             QMessageBox.information(None, "Success", "Соединение с PostgreSQL успешно установлено!")
         except psycopg2.Error as e:

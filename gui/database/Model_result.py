@@ -1,28 +1,7 @@
 from PySide6.QtSql import QSqlDatabase, QSqlQuery
-from datetime import date
-import config_db as dbc
-import psycopg2
-
-def add_book(q, title, year, authorId, genreId, rating):
-    q.addBindValue(title)
-    q.addBindValue(year)
-    q.addBindValue(authorId)
-    q.addBindValue(genreId)
-    q.addBindValue(rating)
-    q.exec()
+from .config_db import db_params
 
 
-def add_genre(q, name):
-    q.addBindValue(name)
-    q.exec()
-    return q.lastInsertId()
-
-
-def add_author(q, name, birthdate):
-    q.addBindValue(name)
-    q.addBindValue(str(birthdate))
-    q.exec()
-    return q.lastInsertId()
 
 
 USERS_SQL = """
@@ -69,6 +48,9 @@ CREATE TABLE IF NOT EXISTS settings (
 	CONSTRAINT settings_fk FOREIGN KEY (user_id_fk) REFERENCES users(user_id)
 );"""
 
+LIST_TEST_SQL = """
+    SELECT test_name FROM tests GROUP BY test_name;
+"""
 
 # INSERT_AUTHOR_SQL = """
 #     insert into authors(name, birthdate) values(?, ?)
@@ -86,17 +68,16 @@ def init_db():
     """
     init_db()
     Initializes the database.
-    If tables "books" and "authors" are already in the database, do nothing.
     Return value: None or raises ValueError
     The error value is the QtSql error instance.
     """
 
     db = QSqlDatabase.addDatabase('QPSQL')
-    db.setHostName(dbc.db_params['host'])
-    db.setDatabaseName(dbc.db_params['database'])
-    db.setPort(dbc.db_params['port'])
-    db.setUserName(dbc.db_params['user'])
-    db.setPassword(dbc.db_params['password'])
+    db.setHostName(db_params['host'])
+    db.setDatabaseName(db_params['database'])
+    db.setPort(db_params['port'])
+    db.setUserName(db_params['user'])
+    db.setPassword(db_params['password'])
 
     def check(func, *args):
         if not func(*args):
@@ -109,5 +90,36 @@ def init_db():
     check(q.exec, TESTS_SQL)
     check(q.exec, REPORT_SQL)
     check(q.exec, SETTING_SQL)
-    check(q.exec, REPORT_SQL)
+
+def execute_postgresql_query(query_string):
+    # Имя соединения с базой данных
+    # Открываем соединение с базой данных
+    db = QSqlDatabase.addDatabase("QPSQL")
+    db.setHostName(db_params['host'])
+    db.setDatabaseName(db_params['database'])
+    db.setPort(db_params['port'])
+    db.setUserName(db_params['user'])
+    db.setPassword(db_params['password'])
+    if not db.open():
+        # В случае ошибки открытия соединения
+        print("Не удалось открыть соединение с базой данных.")
+        return
+    query = QSqlQuery()
+    query.prepare(query_string)
+    list_query_data = []
+    if query.exec():
+        # Если запрос выполнен успешно, можно обрабатывать результаты или продолжать операции
+        while query.next():
+            # Обрабатываем результаты запроса
+            result = query.value(0)
+            list_query_data.append(result)
+    else:
+        # Если запрос выполнен с ошибкой
+        print("Ошибка выполнения запроса:", query.lastError().text())
+    # Закрываем соединение с базой данных
+    db.close()
+    return list_query_data
+
+
+print(execute_postgresql_query(LIST_TEST_SQL))
 
