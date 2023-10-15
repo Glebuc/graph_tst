@@ -2,11 +2,11 @@
 from PySide6.QtWidgets import *
 from ui_functions import UIFunctions
 from ui_mainwindow import Ui_MainWindow
-from PySide6.QtGui import QIcon
+from PySide6.QtGui import QIcon, QTransform
 from PySide6.QtWidgets import (QAbstractItemView, QDataWidgetMapper,
     QHeaderView, QMainWindow, QMessageBox)
 from PySide6.QtGui import QKeySequence
-from PySide6.QtSql import QSqlRelation, QSqlRelationalTableModel, QSqlTableModel
+from PySide6.QtSql import QSqlRelation, QSqlRelationalTableModel, QSqlTableModel, QSqlQuery
 from PySide6.QtCore import Qt, Slot
 import database.Model_result
 
@@ -53,9 +53,18 @@ class Ui(QMainWindow):
 
         database.Model_result.init_db()
 
+
         model = QSqlRelationalTableModel(self.ui.tableView)
         model.setEditStrategy(QSqlTableModel.OnManualSubmit)
         model.setTable("tests")
+
+        # filter_query = QSqlQuery()
+        # filter_condition = "SELECT * FROM tests where test_name like 'HPCG'"
+        # filter_query.exec(filter_condition)
+        #
+        # model.setQuery(filter_query)
+
+
 
 
         # Remember the indexes of the columns:
@@ -69,6 +78,8 @@ class Ui(QMainWindow):
         # Set the localized header captions:
         # model.setHeaderData(author_idx, Qt.Horizontal, self.tr("Author Name"))
         # model.setHeaderData(genre_idx, Qt.Horizontal, self.tr("Genre"))
+
+
         model.setHeaderData(model.fieldIndex("test_name"), Qt.Horizontal, self.tr("Test Name"))
         model.setHeaderData(model.fieldIndex("test_param"), Qt.Horizontal, self.tr("Test Parametrs"))
         model.setHeaderData(model.fieldIndex("test_note"), Qt.Horizontal, self.tr("Note to the test"))

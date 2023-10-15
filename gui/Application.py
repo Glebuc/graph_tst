@@ -15,6 +15,8 @@ class Application(QApplication):
         font.setPointSize(10)
         QApplication.setFont(font)
 
+
+
         db = QSqlDatabase.addDatabase('QPSQL')
         db.setHostName(dbc.db_params['host'])
         db.setDatabaseName(dbc.db_params['database'])
