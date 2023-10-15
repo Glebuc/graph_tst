@@ -1,11 +1,9 @@
 from PySide6.QtWidgets import QApplication
 from PySide6.QtSql import QSqlDatabase
-<<<<<<< HEAD
+
 import config_db as dbc
 import logging
-=======
 
->>>>>>> 44a8b5de9471abfcbb75ecf4669588d1052dbeda
 
 
 LOG = logging.getLogger(__name__)
